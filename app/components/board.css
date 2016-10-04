@@ -1,0 +1,7 @@
+.sl-board-column-even .sl-board-space {
+  fill: lightblue; }
+
+.sl-board-column-odd .sl-board-space {
+  fill: whitesmoke; }
+
+/*# sourceMappingURL=board.css.map */

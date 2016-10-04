@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="components/board.css">
+    <link rel="stylesheet" href="components/board-space.css">
+    <link rel="stylesheet" href="components/snake.css">
+    <link rel="stylesheet" href="components/ladder.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body data-ng-app="snakes-ladder">
+
+<main class="container"
+      data-ng-controller="AppController as app">
+    <section class="col-md-8">
+        <sl-board data-options="app.options"></sl-board>
+    </section>
+    <aside class="col-md-4"></aside>
+</main>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="utils.js"></script>
+<script src="components/board.js"></script>
+<script src="components/board-space.js"></script>
+<script src="components/snake.js"></script>
+<script src="components/ladder.js"></script>
+</body>
+</html>

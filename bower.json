@@ -1,0 +1,29 @@
+{
+  "name": "angular-snakes-ladder",
+  "description": "Classic snakes and ladder game with angular twist",
+  "main": "app/app.js",
+  "authors": [
+    "Mouli Kalakota <mouli.kalakota@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "snakes",
+    "ladder"
+  ],
+  "homepage": "https://github.com/mkalakota/angular-snakes-ladder#readme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5-boilerplate": "^5.3.0",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
