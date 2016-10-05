@@ -42,12 +42,12 @@ angular.module('snakes-ladder')
             rollDice: function () {
                 diceRoll = Math.floor(Math.random() * 6) + 1; //Math.floor(Math.random() * (max - min + 1)) + min;
                 currentPlayer.stats.rolls++;
-                if (diceRoll === 6 && currentPlayer.stats.consecutiveRolls < 3) {
+                if (diceRoll === 6 && currentPlayer.stats.consecutiveSixRolls < 3) {
                     currentPlayer.stats.sixRolls++;
-                    currentPlayer.stats.consecutiveRolls++;
+                    currentPlayer.stats.consecutiveSixRolls++;
                 } else {
                     // switch to next player and reset plays
-                    currentPlayer.stats.consecutiveRolls = 0;
+                    currentPlayer.stats.consecutiveSixRolls = 0;
                     currentPlayer = players[currentPlayer.id % players.length];
                 }
             },

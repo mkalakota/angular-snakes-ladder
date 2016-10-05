@@ -24,16 +24,13 @@ angular.module('snakes-ladder', [])
             }
         });
 
-        $scope.$watch(function () {
-            return gamePlay.getCurrentPlayer().stats.rolls;
-        }, function (newVal, oldVal) {
-            if (newVal > oldVal) {
-                var currentPlayer = gamePlay.getCurrentPlayer();
-                var nextSpace = currentPlayer.spaces.at + gamePlay.getDiceRoll();
-                $scope.$broadcast('sl-move-peg', {
-                    player: currentPlayer,
-                    next: nextSpace > 100 ? currentPlayer.spaces.at : nextSpace
-                });
-            }
+        $scope.$on('sl-dice-rolled', function (event, eventData) {
+            var player = eventData.oldPlayer,
+                nextSpace = player.spaces.at + eventData.diceRoll;
+
+            $scope.$broadcast('sl-move-peg', {
+                player: player,
+                next: nextSpace > 100 ? player.spaces.at : nextSpace
+            });
         });
     }]);
