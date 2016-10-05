@@ -6,12 +6,44 @@
   line-height: 44px;
   font-size: 2em;
   border-radius: 50%;
-  border: 2px solid red;
+  border: 2px solid;
   margin: 0 4px;
 }
 
 .sl-player-playing {
-  background: greenyellow;
+  color: #ffffff;
+}
+
+.sl-player-1 {
+  border-color: #00b3ee;
+}
+
+.sl-player-playing.sl-player-1 {
+  background: #00b3ee;
+}
+
+.sl-player-2 {
+  border-color: #3c763d;
+}
+
+.sl-player-playing.sl-player-2 {
+  background: #3c763d;
+}
+
+.sl-player-3 {
+  border-color: #761c19;
+}
+
+.sl-player-playing.sl-player-3 {
+  background: #761c19;
+}
+
+.sl-player-4 {
+  border-color: #985f0d;
+}
+
+.sl-player-playing.sl-player-4 {
+  background: #985f0d;
 }
 
 .sl-players-note {

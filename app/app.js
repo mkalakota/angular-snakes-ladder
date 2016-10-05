@@ -6,6 +6,7 @@ angular.module('snakes-ladder', ['dndLists'])
 
         app.spaces = createSpaces(rows, columns);
         app.players = gamePlay.getPlayers();
+        app.currentPlayer = gamePlay.getCurrentPlayer;
         app.isGameEnded = gamePlay.isGameEnded;
 
         // load snakes

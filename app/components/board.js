@@ -7,7 +7,8 @@ angular.module('snakes-ladder')
                 spaces: '=',
                 snakes: '=',
                 ladders: '=',
-                players: '='
+                players: '=',
+                currentPlayer: '='
             },
             templateUrl: 'components/board.html',
             templateNamespace: 'svg',

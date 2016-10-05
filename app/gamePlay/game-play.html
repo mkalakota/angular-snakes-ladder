@@ -27,7 +27,7 @@
             <h4>Players</h4>
             <div class="sl-player"
                  data-ng-repeat="player in gamePlay.service.getPlayers()"
-                 data-ng-class="player.id === gamePlay.service.getCurrentPlayer().id ? 'sl-player-playing' : ''">
+                 data-ng-class="player.id === gamePlay.service.getCurrentPlayer().id ? 'sl-player-playing sl-player-'+player.id : 'sl-player-'+player.id">
                 <span class="sl-player-name">{{player.id}}</span>
             </div>
             <div class="sl-players-note">*maximum 4 players at a time</div>
@@ -39,8 +39,8 @@
                       data-ng-click="gamePlay.rollDice()">{{gamePlay.service.getDiceRoll()}}</span>
             </div>
         </section>
-        <section class="sl-action-log">
-            <p></p>
-        </section>
+        <!--<section class="sl-action-log">-->
+        <!--<p></p>-->
+        <!--</section>-->
     </div>
 </div>

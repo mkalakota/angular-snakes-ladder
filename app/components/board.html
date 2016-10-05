@@ -35,6 +35,7 @@
     </g>
     <g class="sl-peg"
        data-ng-repeat="player in players"
+       data-ng-class="player.id === currentPlayer.id ? 'sl-peg-playing sl-peg-' + player.id : 'sl-peg-' + player.id"
        sl-peg
        data-player="player"
        data-spaces="spaces"
