@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,UAAW;EACT,MAAM,EAAE,KAAK;EACb,YAAY,EAAE,CAAC;EACf,gBAAgB,EAAE,IAAI",
-"sources": ["ladder.scss"],
-"names": [],
-"file": "ladder.css"
-}

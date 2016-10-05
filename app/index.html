@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
+    <title>Snakes and Ladder with Angular JS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="components/board.css">
-    <link rel="stylesheet" href="components/board-space.css">
-    <link rel="stylesheet" href="components/snake.css">
-    <link rel="stylesheet" href="components/ladder.css">
-    <link rel="stylesheet" href="components/peg.css">
-    <!--<link rel="stylesheet" href="components/dice.css">-->
-    <link rel="stylesheet" href="gamePlay/game-play.css">
-    <link rel="stylesheet" href="results/results.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- build:css vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"/>
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css snakes-ladder.css -->
+    <link rel="stylesheet" href="temp/styles/app.css">
+    <link rel="stylesheet" href="temp/styles/components/board.css">
+    <link rel="stylesheet" href="temp/styles/components/board-space.css">
+    <link rel="stylesheet" href="temp/styles/components/snake.css">
+    <link rel="stylesheet" href="temp/styles/components/ladder.css">
+    <link rel="stylesheet" href="temp/styles/components/peg.css">
+    <link rel="stylesheet" href="temp/styles/gamePlay/game-play.css">
+    <link rel="stylesheet" href="temp/styles/results/results.css">
+    <!-- endbuild -->
+
 </head>
 <body data-ng-app="snakes-ladder">
 
@@ -40,19 +47,27 @@
     </section>
 </main>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- build:js vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js snakes-ladder.js -->
 <script src="app.js"></script>
 <script src="utils.js"></script>
+<script src="temp/scripts/templates.js"></script>
 <script src="components/board.js"></script>
 <script src="components/board-space.js"></script>
 <script src="components/snake.js"></script>
 <script src="components/ladder.js"></script>
 <script src="components/peg.js"></script>
-<!--<script src="components/dice.js"></script>-->
 <script src="gamePlay/GamePlayService.js"></script>
 <script src="gamePlay/GamePlayController.js"></script>
 <script src="results/results.js"></script>
+<!-- endbuild -->
 </body>
 </html>

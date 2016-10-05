@@ -2,5 +2,6 @@
 *.iml
 /node_modules
 /app/bower_components
+/app/temp
 **/*.css
 **/*.css.map

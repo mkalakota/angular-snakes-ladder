@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Snakes and Ladder with Angular JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="vendor.css">
+
+    <link rel="stylesheet" href="snakes-ladder.css">
+
+</head>
+<body data-ng-app="snakes-ladder">
+
+<main class="container"
+      data-ng-controller="AppController as app">
+    <section class="col-md-8" data-ng-hide="app.isGameEnded()">
+        <sl-board data-spaces="app.spaces"
+                  data-snakes="app.snakes"
+                  data-ladders="app.ladders"
+                  data-players="app.players">
+        </sl-board>
+    </section>
+    <aside class="col-md-4" data-ng-hide="app.isGameEnded()">
+        <ng-include src="'gamePlay/game-play.html'"></ng-include>
+    </aside>
+    <section class="col-md-12" data-ng-if="app.isGameEnded()">
+        <ng-include src="'results/results.html'"></ng-include>
+    </section>
+</main>
+
+<script src="vendor.js"></script>
+
+<script src="snakes-ladder.js"></script>
+</body>
+</html>
