@@ -27,7 +27,7 @@
             <h4>Players</h4>
             <div class="sl-player"
                  data-ng-repeat="player in gamePlay.service.getPlayers()"
-                 data-ng-class="player.id === gamePlay.service.getCurrentPlayer() ? 'sl-player-playing' : ''">
+                 data-ng-class="player.id === gamePlay.service.getCurrentPlayer().id ? 'sl-player-playing' : ''">
                 <span class="sl-player-name">{{player.id}}</span>
             </div>
             <div class="sl-players-note">*maximum 4 players at a time</div>

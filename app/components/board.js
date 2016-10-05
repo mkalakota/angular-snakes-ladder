@@ -6,7 +6,8 @@ angular.module('snakes-ladder')
             scope: {
                 spaces: '=',
                 snakes: '=',
-                ladders: '='
+                ladders: '=',
+                players: '='
             },
             templateUrl: 'components/board.html',
             templateNamespace: 'svg',

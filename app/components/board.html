@@ -15,7 +15,7 @@
            data-height="spaceHeight">
         </g>
     </g>
-    <g class="sl-snakes"
+    <g class="sl-snake"
        data-ng-repeat="snake in snakes"
        sl-snake
        data-space-width="spaceWidth"
@@ -24,7 +24,7 @@
        data-to-space="snake.to"
        data-spaces="spaces">
     </g>
-    <g class="sl-ladders"
+    <g class="sl-ladder"
        data-ng-repeat="ladder in ladders"
        sl-ladder
        data-space-width="spaceWidth"
@@ -32,5 +32,13 @@
        data-from-space="ladder.from"
        data-to-space="ladder.to"
        data-spaces="spaces">
+    </g>
+    <g class="sl-peg"
+       data-ng-repeat="player in players"
+       sl-peg
+       data-player="player"
+       data-spaces="spaces"
+       data-space-width="spaceWidth"
+       data-space-height="spaceHeight">
     </g>
 </svg>

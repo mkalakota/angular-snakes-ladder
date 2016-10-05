@@ -15,7 +15,7 @@ angular.module('snakes-ladder')
             controllerAs: 'snake'
         };
     })
-    .controller('SnakeController', ['$scope', 'slGetLocation', 'slGetSpace', function ($scope, getLocation, getSpace) {
+    .controller('SnakeController', ['$scope', 'slGetLocation', function ($scope, getLocation) {
         var snake = this;
 
         function computeAttributes(fromLocation, toLocation) {
@@ -30,7 +30,7 @@ angular.module('snakes-ladder')
             return attributes;
         }
 
-        snake.head = getLocation($scope.fromSpace, $scope.spaces.length, $scope.spaces[0].length, $scope.spaceWidth, $scope.spaceHeight);
-        snake.tail = getLocation($scope.toSpace, $scope.spaces.length, $scope.spaces[0].length, $scope.spaceWidth, $scope.spaceHeight);
+        snake.head = getLocation($scope.fromSpace, $scope.spaces, $scope.spaceWidth, $scope.spaceHeight);
+        snake.tail = getLocation($scope.toSpace, $scope.spaces, $scope.spaceWidth, $scope.spaceHeight);
         snake.attributes = computeAttributes(snake.head, snake.tail);
     }]);

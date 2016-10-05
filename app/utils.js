@@ -9,7 +9,7 @@ angular.module('snakes-ladder')
             for (rowIdx = 0; rowIdx < rowsNumber; rowIdx++) {
                 row = [];
                 for (columnIdx = 0; columnIdx < columnsNumber; columnIdx++) {
-                    space = {id: totalSpaces--, positionY: rowIdx, link: {}};
+                    space = {id: totalSpaces--, positionY: rowIdx};
                     rowIdx % 2 ? row.splice(0, 0, space) : row.push(space);
                     space.positionX = rowIdx % 2 ? columnsNumber - columnIdx - 1 : columnIdx;
                 }
@@ -30,8 +30,8 @@ angular.module('snakes-ladder')
                 hPosition = columnsNumber - hPosition - 1; // index starts from 0
             }
             if (spaceNumber % rowsNumber === 0) {
+                vPosition % 2 ? hPosition++ : hPosition--;
                 vPosition++;
-                hPosition++;
             }
 
             return {
@@ -41,8 +41,8 @@ angular.module('snakes-ladder')
         };
     })
     .factory('slGetLocation', ['slGetPosition', function (slGetPosition) {
-        return function (spaceNumber, rowsNumber, columnsNumber, spaceWidth, spaceHeight) {
-            var position = slGetPosition(spaceNumber, rowsNumber, columnsNumber);
+        return function (spaceNumber, spaces, spaceWidth, spaceHeight) {
+            var position = slGetPosition(spaceNumber, spaces.length, spaces[0].length);
 
             return {
                 x: position.h * spaceWidth + spaceWidth / 2,
