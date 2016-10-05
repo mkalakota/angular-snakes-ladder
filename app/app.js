@@ -1,4 +1,4 @@
-angular.module('snakes-ladder', [])
+angular.module('snakes-ladder', ['dndLists'])
     .controller('AppController', ['$scope', '$http', '$timeout', 'slCreateSpaces', 'slGetSpace', 'GamePlayService', function ($scope, $http, $timeout, createSpaces, getSpace, gamePlay) {
         var app = this,
             rows = 10,
@@ -6,6 +6,7 @@ angular.module('snakes-ladder', [])
 
         app.spaces = createSpaces(rows, columns);
         app.players = gamePlay.getPlayers();
+        app.isGameEnded = gamePlay.isGameEnded;
 
         // load snakes
         $http.get('config/snakes.json').then(function (response) {

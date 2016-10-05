@@ -1,0 +1,29 @@
+<div class="sl-game-results"
+     data-ng-controller="ResultsController as results">
+    <header class="sl-game-play-header">
+        <h3 class="sl-game-play-title">Results
+            <button class="btn btn-default"
+                    data-ng-click="results.newGame()">
+                New Game
+            </button>
+        </h3>
+    </header>
+    <div class="sl-game-play-body">
+        <ul class="sl-players-result"
+            data-dnd-list="results.players">
+            <li class="sl-player-result"
+                data-ng-repeat="player in results.players"
+                data-dnd-draggable="player"
+                data-dnd-moved="results.players.splice($index,1)"
+                data-dnd-effect-allowed="move">
+                <label>Player {{player.id}}</label>
+                <div>
+                    <span>{{player.stats.rolls}} Dice rolled,&nbsp;</span>
+                    <span>{{player.stats.sixRolls}} Six(s) rolled,&nbsp;</span>
+                    <span>{{player.stats.snake}} Snake bite(s),&nbsp;</span>
+                    <span>{{player.stats.ladder}} Ladder climb(s)</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

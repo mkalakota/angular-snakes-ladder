@@ -4,9 +4,6 @@ angular.module('snakes-ladder')
 
         gamePlay.service = gamePlayService;
 
-        gamePlay.endGame = function () {
-        };
-
         gamePlay.rollDice = function () {
             var oldPlayer = gamePlayService.getCurrentPlayer(),
                 newPlayer;

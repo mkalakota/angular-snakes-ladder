@@ -1,7 +1,7 @@
 angular.module('snakes-ladder')
     .factory('GamePlayService', function () {
         // initialization
-        var players = [], diceRoll, currentPlayer;
+        var players = [], diceRoll, currentPlayer, gameEnded;
 
         // single player
         function initialize() {
@@ -9,6 +9,7 @@ angular.module('snakes-ladder')
             players.push(createPlayer(1));
             currentPlayer = players[0];
             diceRoll = 1;
+            gameEnded = false;
         }
 
         function createPlayer(playerId) {
@@ -17,7 +18,7 @@ angular.module('snakes-ladder')
                 stats: {
                     rolls: 0,
                     sixRolls: 0,
-                    consecutiveRolls: 0,
+                    consecutiveSixRolls: 0,
                     ladder: 0,
                     snake: 0
                 },
@@ -54,6 +55,12 @@ angular.module('snakes-ladder')
             getDiceRoll: function () {
                 return diceRoll;
             },
-            resetGame: initialize
+            resetGame: initialize,
+            endGame: function () {
+                gameEnded = true;
+            },
+            isGameEnded: function () {
+                return gameEnded;
+            }
         };
     });

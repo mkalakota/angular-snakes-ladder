@@ -18,26 +18,31 @@
     <link rel="stylesheet" href="components/peg.css">
     <!--<link rel="stylesheet" href="components/dice.css">-->
     <link rel="stylesheet" href="gamePlay/game-play.css">
+    <link rel="stylesheet" href="results/results.css">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body data-ng-app="snakes-ladder">
 
 <main class="container"
       data-ng-controller="AppController as app">
-    <section class="col-md-8">
+    <section class="col-md-8" data-ng-hide="app.isGameEnded()">
         <sl-board data-spaces="app.spaces"
                   data-snakes="app.snakes"
                   data-ladders="app.ladders"
                   data-players="app.players">
         </sl-board>
     </section>
-    <aside class="col-md-4">
+    <aside class="col-md-4" data-ng-hide="app.isGameEnded()">
         <ng-include src="'gamePlay/game-play.html'"></ng-include>
     </aside>
+    <section class="col-md-12" data-ng-if="app.isGameEnded()">
+        <ng-include src="'results/results.html'"></ng-include>
+    </section>
 </main>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
 <script src="app.js"></script>
 <script src="utils.js"></script>
 <script src="components/board.js"></script>
@@ -48,5 +53,6 @@
 <!--<script src="components/dice.js"></script>-->
 <script src="gamePlay/GamePlayService.js"></script>
 <script src="gamePlay/GamePlayController.js"></script>
+<script src="results/results.js"></script>
 </body>
 </html>
