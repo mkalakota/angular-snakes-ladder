@@ -1,7 +1,12 @@
 html,
 body,
 main,
-.container section,
-.container aside {
+.container > section,
+.container > aside {
   height: 100%;
+}
+
+.container > section,
+.container > aside {
+  padding: 15px;
 }

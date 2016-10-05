@@ -1,15 +1,14 @@
-<!-- variable 'board' is from BoardController -->
 <svg xmlns="http://www.w3.org/2000/svg"
      width="100%"
      height="100%">
     <g class="sl-board-row"
-       data-ng-repeat="row in board.spaces"
+       data-ng-repeat="row in spaces"
        data-ng-init="locationY = $index * spaceHeight">
         <g class="sl-board-column"
-           data-ng-repeat="space in row"
-           data-ng-class="space % 2 ? 'sl-board-column-odd' : 'sl-board-column-even'"
+           data-ng-repeat="space in row track by space.id"
+           data-ng-class="space.id % 2 ? 'sl-board-column-odd' : 'sl-board-column-even'"
            sl-board-space
-           data-number="space"
+           data-number="space.id"
            data-location-x="$index * spaceWidth"
            data-location-y="locationY"
            data-width="spaceWidth"
@@ -17,23 +16,21 @@
         </g>
     </g>
     <g class="sl-snakes"
-       data-ng-repeat="snake in options.snakes"
+       data-ng-repeat="snake in snakes"
        sl-snake
        data-space-width="spaceWidth"
        data-space-height="spaceHeight"
        data-from-space="snake.from"
        data-to-space="snake.to"
-       data-rows="options.rows"
-       data-columns="options.columns">
+       data-spaces="spaces">
     </g>
     <g class="sl-ladders"
-       data-ng-repeat="ladder in options.ladders"
+       data-ng-repeat="ladder in ladders"
        sl-ladder
        data-space-width="spaceWidth"
        data-space-height="spaceHeight"
        data-from-space="ladder.from"
        data-to-space="ladder.to"
-       data-rows="options.rows"
-       data-columns="options.columns">
+       data-spaces="spaces">
     </g>
 </svg>

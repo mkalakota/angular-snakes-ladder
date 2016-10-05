@@ -1,0 +1,46 @@
+<div class="sl-game-play"
+     data-ng-controller="GamePlayController as gamePlay">
+    <header class="sl-game-play-header">
+        <h3 class="sl-game-play-title">Game Play</h3>
+        <div class="sl-game-play-actions pull-right">
+            <button class="btn"
+                    title="Add Player"
+                    data-ng-click="gamePlay.service.addPlayer()"
+                    data-ng-disabled="gamePlay.service.getPlayers().length === 4">
+                <i class="fa fa-plus fa-lg"></i>
+            </button>
+            <button class="btn"
+                    title="End Game"
+                    data-ng-click="gamePlay.endGame()">
+                <i class="fa fa-times fa-lg"></i>
+            </button>
+            <button class="btn"
+                    title="Reset Game"
+                    data-ng-click="gamePlay.service.resetGame()">
+                <i class="fa fa-refresh fa-lg"></i>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <div class="sl-game-play-body">
+        <section class="sl-players">
+            <h4>Players</h4>
+            <div class="sl-player"
+                 data-ng-repeat="player in gamePlay.service.getPlayers()"
+                 data-ng-class="player.id === gamePlay.service.getCurrentPlayer() ? 'sl-player-playing' : ''">
+                <span class="sl-player-name">{{player.id}}</span>
+            </div>
+            <div class="sl-players-note">*maximum 4 players at a time</div>
+        </section>
+        <section class="sl-dice-section">
+            <h4>Roll Dice</h4>
+            <div class="sl-dice-container">
+                <span class="sl-dice"
+                      data-ng-click="gamePlay.service.rollDice()">{{gamePlay.service.getDiceRoll()}}</span>
+            </div>
+        </section>
+        <section class="sl-action-log">
+            <p></p>
+        </section>
+    </div>
+</div>

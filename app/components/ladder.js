@@ -7,8 +7,7 @@ angular.module('snakes-ladder')
                 toSpace: '=',
                 spaceWidth: '=',
                 spaceHeight: '=',
-                rows: '=',
-                columns: '='
+                spaces: '='
             },
             templateUrl: 'components/ladder.html',
             templateNamespace: 'svg',
@@ -16,9 +15,9 @@ angular.module('snakes-ladder')
             controllerAs: 'ladder'
         };
     })
-    .controller('LadderController', ['$scope', 'slGetLocation', function ($scope, getLocation) {
+    .controller('LadderController', ['$scope', 'slGetLocation', 'slGetSpace', function ($scope, getLocation, getSpace) {
         var ladder = this;
 
-        ladder.head = getLocation($scope.toSpace, $scope.rows, $scope.columns, $scope.spaceWidth, $scope.spaceHeight);
-        ladder.tail = getLocation($scope.fromSpace, $scope.rows, $scope.columns, $scope.spaceWidth, $scope.spaceHeight);
+        ladder.head = getLocation($scope.toSpace, $scope.spaces.length, $scope.spaces[0].length, $scope.spaceWidth, $scope.spaceHeight);
+        ladder.tail = getLocation($scope.fromSpace, $scope.spaces.length, $scope.spaces[0].length, $scope.spaceWidth, $scope.spaceHeight);
     }]);
