@@ -1,5 +1,6 @@
 angular.module('snakes-ladder')
     .directive('slLadder', function () {
+        'use strict';
         return {
             restrict: 'A',
             scope: {
@@ -16,6 +17,7 @@ angular.module('snakes-ladder')
         };
     })
     .controller('LadderController', ['$scope', 'slGetLocation', function ($scope, getLocation) {
+        'use strict';
         var ladder = this;
 
         ladder.head = getLocation($scope.toSpace, $scope.spaces, $scope.spaceWidth, $scope.spaceHeight);

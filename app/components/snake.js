@@ -1,5 +1,6 @@
 angular.module('snakes-ladder')
     .directive('slSnake', function () {
+        'use strict';
         return {
             restrict: 'A',
             scope: {
@@ -16,6 +17,7 @@ angular.module('snakes-ladder')
         };
     })
     .controller('SnakeController', ['$scope', 'slGetLocation', function ($scope, getLocation) {
+        'use strict';
         var snake = this;
 
         function computeAttributes(fromLocation, toLocation) {

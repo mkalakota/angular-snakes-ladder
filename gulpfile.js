@@ -16,7 +16,7 @@ var app = {
 };
 
 var paths = {
-    scripts: [app.src + '/**/*.js'],
+    scripts: [app.src + '/**/*.js', '!' + app.lib + '/**/*.js'],
     styles: [app.src + '/**/*.scss'],
     view: app.src + '/index.html',
     templates: [app.src + '/*/*.html']

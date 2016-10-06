@@ -1,5 +1,6 @@
 angular.module('snakes-ladder', ['dndLists'])
     .controller('AppController', ['$scope', '$http', '$timeout', 'slCreateSpaces', 'slGetSpace', 'GamePlayService', function ($scope, $http, $timeout, createSpaces, getSpace, gamePlay) {
+        'use strict';
         var app = this,
             rows = 10,
             columns = 10;

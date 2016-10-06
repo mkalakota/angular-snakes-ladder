@@ -1,5 +1,6 @@
 angular.module('snakes-ladder')
-    .directive('slBoardSpace', ['$templateCache', function ($templateCache) {
+    .directive('slBoardSpace', function () {
+        'use strict';
         return {
             restrict: 'A',
             scope: {
@@ -11,5 +12,5 @@ angular.module('snakes-ladder')
             },
             templateUrl: 'components/board-space.html',
             templateNamespace: 'svg'
-        }
-    }]);
+        };
+    });

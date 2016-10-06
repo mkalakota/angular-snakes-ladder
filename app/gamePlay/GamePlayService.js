@@ -1,16 +1,6 @@
 angular.module('snakes-ladder')
     .factory('GamePlayService', function () {
-        // initialization
-        var players = [], diceRoll, currentPlayer, gameEnded;
-
-        // single player
-        function initialize() {
-            players.length = 0;
-            players.push(createPlayer(1));
-            currentPlayer = players[0];
-            diceRoll = 1;
-            gameEnded = false;
-        }
+        'use strict';
 
         function createPlayer(playerId) {
             return {
@@ -26,6 +16,17 @@ angular.module('snakes-ladder')
                     at: 1
                 }
             };
+        }
+
+        // initialization
+        var players = [], diceRoll, currentPlayer, gameEnded;
+        // single player
+        function initialize() {
+            players.length = 0;
+            players.push(createPlayer(1));
+            currentPlayer = players[0];
+            diceRoll = 1;
+            gameEnded = false;
         }
 
         initialize();

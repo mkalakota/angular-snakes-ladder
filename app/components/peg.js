@@ -1,5 +1,6 @@
 angular.module('snakes-ladder')
     .directive('slPeg', function () {
+        'use strict';
         return {
             restrict: 'A',
             scope: {
@@ -15,6 +16,7 @@ angular.module('snakes-ladder')
         };
     })
     .controller('PegController', ['$scope', '$timeout', 'slGetLocation', 'slGetSpace', function ($scope, $timeout, getLocation, getSpace) {
+        'use strict';
         var peg = this;
 
         peg.location = getLocation($scope.player.spaces.at, $scope.spaces, $scope.spaceWidth, $scope.spaceHeight);
@@ -31,7 +33,7 @@ angular.module('snakes-ladder')
                 if (space.link) {
                     $timeout(function () { // delay for ladder climb / snake bite
                         space.link < eventData.next ? $scope.player.stats.snake++ : $scope.player.stats.ladder++;
-                        $scope.$broadcast('sl-move-peg', {player: $scope.player, next: space.link})
+                        $scope.$broadcast('sl-move-peg', {player: $scope.player, next: space.link});
                     }, 1000);
                 }
             }

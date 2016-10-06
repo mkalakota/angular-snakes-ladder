@@ -1,5 +1,6 @@
 angular.module('snakes-ladder')
     .controller('GamePlayController', ['$scope', 'GamePlayService', function ($scope, gamePlayService) {
+        'use strict';
         var gamePlay = this;
 
         gamePlay.service = gamePlayService;
