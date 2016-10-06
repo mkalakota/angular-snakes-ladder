@@ -1,0 +1,184 @@
+html,
+body,
+main {
+  height: 100%;
+}
+
+main.container > section {
+  min-height: 500px;
+}
+
+.container > section,
+.container > aside {
+  padding: 15px;
+}
+
+@media (min-width: 992px) {
+  .container > section,
+  .container > aside {
+    height: 100%;
+  }
+}
+
+.sl-board-column-even .sl-board-space {
+  fill: lightblue;
+}
+
+.sl-board-column-odd .sl-board-space {
+  fill: whitesmoke;
+}
+
+
+.sl-snake-head {
+  fill: red;
+}
+
+.sl-snake-body {
+  fill: none;
+  stroke: red;
+  stroke-width: 2;
+  stroke-dasharray: 3;
+}
+
+.sl-ladder {
+  stroke: green;
+  stroke-width: 2;
+  stroke-dasharray: 10 2;
+}
+
+.sl-peg-circle {
+  transition: all 1s ease-in-out;
+  stroke-width: 2;
+  fill: #ffffff;
+}
+
+.sl-peg-playing .sl-peg-text {
+  fill: #ffffff;
+}
+
+.sl-peg-1 .sl-peg-circle {
+  stroke: #00b3ee;
+}
+
+.sl-peg-playing.sl-peg-1 .sl-peg-circle {
+  fill: #00b3ee;
+}
+
+.sl-peg-2 .sl-peg-circle {
+  stroke: #3c763d;
+}
+
+.sl-peg-playing.sl-peg-2 .sl-peg-circle {
+  fill: #3c763d;
+}
+
+.sl-peg-3 .sl-peg-circle {
+  stroke: #761c19;
+}
+
+.sl-peg-playing.sl-peg-3 .sl-peg-circle {
+  fill: #761c19;
+}
+
+.sl-peg-4 .sl-peg-circle {
+  stroke: #985f0d;
+}
+
+.sl-peg-playing.sl-peg-4 .sl-peg-circle {
+  fill: #985f0d;
+}
+
+.sl-player {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 44px;
+  font-size: 2em;
+  border-radius: 50%;
+  border: 2px solid;
+  margin: 0 4px;
+}
+
+.sl-player-playing {
+  color: #ffffff;
+}
+
+.sl-player-1 {
+  border-color: #00b3ee;
+}
+
+.sl-player-playing.sl-player-1 {
+  background: #00b3ee;
+}
+
+.sl-player-2 {
+  border-color: #3c763d;
+}
+
+.sl-player-playing.sl-player-2 {
+  background: #3c763d;
+}
+
+.sl-player-3 {
+  border-color: #761c19;
+}
+
+.sl-player-playing.sl-player-3 {
+  background: #761c19;
+}
+
+.sl-player-4 {
+  border-color: #985f0d;
+}
+
+.sl-player-playing.sl-player-4 {
+  background: #985f0d;
+}
+
+.sl-players-note {
+  color: #ababab;
+  font-size: 0.9em;
+  margin: 4px;
+}
+
+.sl-game-play-header,
+.sl-game-play-body > section {
+  padding-bottom: 2px;
+  border-bottom: thin solid #cecece;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.075);
+}
+
+.sl-dice {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  border: thin solid #999;
+  line-height: 46px;
+  font-size: 1.5em;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.sl-dice-container {
+  text-align: center;
+}
+
+.sl-player-result {
+  display: block;
+  margin: 15px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  position: relative;
+}
+
+.sl-players-result {
+  padding-left: 0;
+  position: relative;
+}
+
+.sl-players-result .dndPlaceholder {
+  display: block;
+  background-color: #efefef;
+  min-height: 75px;
+}

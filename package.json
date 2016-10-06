@@ -4,9 +4,9 @@
   "description": "Classic snakes and ladder game with angular twist",
   "main": "app/app.js",
   "scripts": {
-    "postinstall": "bower install && gulp build",
+    "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "gulp serve",
+    "start": "http-server -a localhost -p 8000 -c-1 ./dist",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"

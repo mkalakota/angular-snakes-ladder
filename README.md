@@ -5,6 +5,9 @@ Demo
 
 ### To run locally
     npm start
+
+### To build locally
+    gulp build
     
 #### Using client libraries:
     angular

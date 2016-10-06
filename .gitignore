@@ -1,7 +1,6 @@
 .idea
-*.iml
 /node_modules
 /app/bower_components
 /app/temp
-**/*.css
+/app/**/*.css
 **/*.css.map

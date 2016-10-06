@@ -146,8 +146,18 @@ gulp.task('copy:extras', function () {
         .pipe(gulp.dest(app.dist));
 });
 
+gulp.task('copy:config', function () {
+    return gulp.src(app.src + '/config/**/*')
+        .pipe(gulp.dest(app.dist + '/config'));
+});
+
+gulp.task('copy:fonts', function () {
+    return gulp.src([app.src + '/fonts/**/*', app.lib + '/font-awesome/fonts/*'])
+        .pipe(gulp.dest(app.dist + '/fonts'));
+});
+
 gulp.task('build', ['clean:dist', 'clean:tmp'], function () {
-    runSequence(['copy:extras', 'client:build']);
+    runSequence(['copy:config', 'copy:extras', 'copy:fonts', 'client:build']);
 });
 
 gulp.task('default', ['build']);
