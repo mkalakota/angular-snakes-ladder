@@ -1,7 +1,7 @@
 # angular-snakes-ladder
 Classic Snakes and Ladder game with angular twist
 
-Demo
+[Demo](https://angular-snakes-ladder.herokuapp.com/)
 
 ### To run locally
     npm start

@@ -1,6 +1,6 @@
 .sl-peg-circle {
   transition: all 1s ease-in-out;
-  stroke-width: 2;
+  stroke-width: 1;
   fill: #ffffff;
 }
 
@@ -9,33 +9,33 @@
 }
 
 .sl-peg-1 .sl-peg-circle {
-  stroke: #00b3ee;
-}
-
-.sl-peg-playing.sl-peg-1 .sl-peg-circle {
   fill: #00b3ee;
 }
 
-.sl-peg-2 .sl-peg-circle {
-  stroke: #3c763d;
+.sl-peg-playing.sl-peg-1 .sl-peg-circle {
+  stroke: #00b3ee;
 }
 
-.sl-peg-playing.sl-peg-2 .sl-peg-circle {
+.sl-peg-2 .sl-peg-circle {
   fill: #3c763d;
 }
 
-.sl-peg-3 .sl-peg-circle {
-  stroke: #761c19;
+.sl-peg-playing.sl-peg-2 .sl-peg-circle {
+  stroke: #3c763d;
 }
 
-.sl-peg-playing.sl-peg-3 .sl-peg-circle {
+.sl-peg-3 .sl-peg-circle {
   fill: #761c19;
 }
 
+.sl-peg-playing.sl-peg-3 .sl-peg-circle {
+  stroke: #761c19;
+}
+
 .sl-peg-4 .sl-peg-circle {
-  stroke: #985f0d;
+  fill: #985f0d;
 }
 
 .sl-peg-playing.sl-peg-4 .sl-peg-circle {
-  fill: #985f0d;
+  stroke: black;
 }

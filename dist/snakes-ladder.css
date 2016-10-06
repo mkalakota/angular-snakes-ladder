@@ -48,7 +48,7 @@ main.container > section {
 
 .sl-peg-circle {
   transition: all 1s ease-in-out;
-  stroke-width: 2;
+  stroke-width: 1;
   fill: #ffffff;
 }
 
@@ -57,35 +57,35 @@ main.container > section {
 }
 
 .sl-peg-1 .sl-peg-circle {
-  stroke: #00b3ee;
-}
-
-.sl-peg-playing.sl-peg-1 .sl-peg-circle {
   fill: #00b3ee;
 }
 
-.sl-peg-2 .sl-peg-circle {
-  stroke: #3c763d;
+.sl-peg-playing.sl-peg-1 .sl-peg-circle {
+  stroke: #00b3ee;
 }
 
-.sl-peg-playing.sl-peg-2 .sl-peg-circle {
+.sl-peg-2 .sl-peg-circle {
   fill: #3c763d;
 }
 
-.sl-peg-3 .sl-peg-circle {
-  stroke: #761c19;
+.sl-peg-playing.sl-peg-2 .sl-peg-circle {
+  stroke: #3c763d;
 }
 
-.sl-peg-playing.sl-peg-3 .sl-peg-circle {
+.sl-peg-3 .sl-peg-circle {
   fill: #761c19;
 }
 
+.sl-peg-playing.sl-peg-3 .sl-peg-circle {
+  stroke: #761c19;
+}
+
 .sl-peg-4 .sl-peg-circle {
-  stroke: #985f0d;
+  fill: #985f0d;
 }
 
 .sl-peg-playing.sl-peg-4 .sl-peg-circle {
-  fill: #985f0d;
+  stroke: black;
 }
 
 .sl-player {
@@ -96,43 +96,28 @@ main.container > section {
   line-height: 44px;
   font-size: 2em;
   border-radius: 50%;
-  border: 2px solid;
+  border: 2px solid transparent;
   margin: 0 4px;
-}
-
-.sl-player-playing {
   color: #ffffff;
 }
 
-.sl-player-1 {
-  border-color: #00b3ee;
+.sl-player-playing {
+  border-color: black;
 }
 
-.sl-player-playing.sl-player-1 {
+.sl-player-1 {
   background: #00b3ee;
 }
 
 .sl-player-2 {
-  border-color: #3c763d;
-}
-
-.sl-player-playing.sl-player-2 {
   background: #3c763d;
 }
 
 .sl-player-3 {
-  border-color: #761c19;
-}
-
-.sl-player-playing.sl-player-3 {
   background: #761c19;
 }
 
 .sl-player-4 {
-  border-color: #985f0d;
-}
-
-.sl-player-playing.sl-player-4 {
   background: #985f0d;
 }
 
