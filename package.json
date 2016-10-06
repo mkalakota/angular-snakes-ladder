@@ -26,8 +26,10 @@
     "url": "https://github.com/mkalakota/angular-snakes-ladder/issues"
   },
   "homepage": "https://github.com/mkalakota/angular-snakes-ladder#readme",
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
   "devDependencies": {
-    "bower": "^1.7.9",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-autoprefixer": "^3.1.1",
