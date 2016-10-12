@@ -1,12 +1,22 @@
 html,
 body,
-main,
-.container > section,
-.container > aside {
+main {
   height: 100%;
+}
+
+main.container > section {
+  min-height: 500px;
 }
 
 .container > section,
 .container > aside {
   padding: 15px;
+}
+
+// desktop only
+@media (min-width: 992px) {
+  .container > section,
+  .container > aside {
+    height: 100%;
+  }
 }

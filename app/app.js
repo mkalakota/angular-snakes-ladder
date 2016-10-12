@@ -9,6 +9,7 @@ angular.module('snakes-ladder', ['dndLists'])
         app.players = gamePlay.getPlayers();
         app.currentPlayer = gamePlay.getCurrentPlayer;
         app.isGameEnded = gamePlay.isGameEnded;
+        app.showBoard = true;
 
         // load snakes
         $http.get('config/snakes.json').then(function (response) {
@@ -36,4 +37,44 @@ angular.module('snakes-ladder', ['dndLists'])
                 next: nextSpace > 100 ? player.spaces.at : nextSpace
             });
         });
+
+        var boardTimeout;
+        $scope.$on('sl-window-resize', function () {
+            var $section = angular.element('main.container>section');
+            app.showBoard = false;
+            $scope.$digest();
+            if (angular.element('html').width() < 992) {
+                $section.css('height', $section.width() + 'px');
+            } else {
+                $section.css('height', '100%');
+            }
+            if (!boardTimeout) {
+                boardTimeout = $timeout(function () {
+                    boardTimeout = null;
+                    app.showBoard = true;
+                    $scope.$digest();
+                }, 10);
+            }
+        });
+    }])
+    .run(['$rootScope', function ($rootScope) {
+        'use strict';
+
+        //refer https://developer.mozilla.org/en-US/docs/Web/Events/resize
+        var resizeTimeout;
+
+        function resizeThrottler() {
+            // ignore resize events as long as an actualResizeHandler execution is in the queue
+            if (!resizeTimeout) {
+                resizeTimeout = setTimeout(function () {
+                    resizeTimeout = null;
+                    // handle the resize event
+                    $rootScope.$broadcast('sl-window-resize');
+
+                    // The actualResizeHandler will execute at a rate of 15fps
+                }, 66);
+            }
+        }
+
+        window.addEventListener("resize", resizeThrottler, false);
     }]);

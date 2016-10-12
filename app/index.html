@@ -32,13 +32,15 @@
 
 <main class="container"
       data-ng-controller="AppController as app">
-    <section class="col-md-8" data-ng-hide="app.isGameEnded()">
-        <sl-board data-spaces="app.spaces"
-                  data-snakes="app.snakes"
-                  data-ladders="app.ladders"
-                  data-players="app.players"
-                  data-current-player="app.currentPlayer()">
-        </sl-board>
+    <section class="col-md-8"
+             data-ng-hide="app.isGameEnded()"
+             data-ng-if="app.showBoard"
+             sl-board
+             data-spaces="app.spaces"
+             data-snakes="app.snakes"
+             data-ladders="app.ladders"
+             data-players="app.players"
+             data-current-player="app.currentPlayer()">
     </section>
     <aside class="col-md-4" data-ng-hide="app.isGameEnded()">
         <ng-include src="'gamePlay/game-play.html'"></ng-include>
